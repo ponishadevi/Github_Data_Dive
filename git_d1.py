@@ -22,8 +22,14 @@ st.set_page_config(
 # Function to connect to MySQL database and fetch data
 def load_data():
     try:
-        # Create the SQLAlchemy engine
-        engine = create_engine('mysql+pymysql://root:new_password@127.0.0.1:3306/github_data')
+        # Database credentials
+        user = 'root'  # replace with your username
+        password = 'new_password'  # replace with your password
+        host = '127.0.0.1:3306'  # or '127.0.0.1'
+        database = 'github_data
+        # Create the SQLAlchemy engine using pymysql
+        engine = create_engine(f"mysql+pymysql://{user}:{password}@{host}/{database}", pool_size=10, max_overflow=20)
+
         query = "SELECT * FROM repositories"
         
         # Load data into DataFrame
