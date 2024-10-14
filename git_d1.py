@@ -26,7 +26,7 @@ def load_data():
         user = 'root'  # replace with your username
         password = 'new_password'  # replace with your password
         host = '127.0.0.1:3306'  # or '127.0.0.1'
-        database = 'github_data
+        database = 'github_data'
         # Create the SQLAlchemy engine using pymysql
         engine = create_engine(f"mysql+pymysql://{user}:{password}@{host}/{database}", pool_size=10, max_overflow=20)
 
