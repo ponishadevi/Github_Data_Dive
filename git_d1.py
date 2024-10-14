@@ -23,7 +23,7 @@ st.set_page_config(
 def load_data():
     try:
         # Create the SQLAlchemy engine
-        engine = create_engine('mysql+pymysql://root:new_password@127.0.0.1/github_data')
+        engine = create_engine('mysql+pymysql://root:new_password@127.0.0.1:3306/github_data')
         query = "SELECT * FROM repositories"
         
         # Load data into DataFrame
